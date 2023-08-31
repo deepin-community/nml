@@ -1,15 +1,27 @@
-Source: template-repository
-Section: unknown
+Source: nml
+Section: devel
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Matthijs Kooijman <matthijs@stdin.nl>
+Uploaders: Jordi Mallach <jordi@debian.org>
+Build-Depends: debhelper-compat (= 13), dh-sequence-python3, python3-all-dev:any, libpython3-all-dev, python3-setuptools,
+ python3-ply, python3-pil
+Standards-Version: 4.6.2
+Vcs-Browser: https://salsa.debian.org/openttd-team/nml
+Vcs-Git: https://salsa.debian.org/openttd-team/nml.git
+Homepage: https://github.com/OpenTTD/nml
+Rules-Requires-Root: no
 
-Package: template-repository
+Package: nml
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Multi-Arch: foreign
+Depends: ${python3:Depends}, ${misc:Depends}, ${shlibs:Depends},
+# Upstream doesn't list dependencies in setup.py, so we list them manually here
+ python3-ply, python3-pil (>= 3.4),
+# The nmlc script setuptools generates uses pkg_resources from setuptools to
+# locate its entrypoint within the nml python package.
+ python3-setuptools
+Description: newgrf meta language compiler
+ NML is a python-based compiler, capable of compiling NML (NewGRF Meta
+ Language) files (along with their associated language, sound and graphic
+ files) into grf and / or nfo files (which can serve as datafiles for the
+ OpenTTD or TTDPatch games).

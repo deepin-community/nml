@@ -1,4 +1,54 @@
 #!/usr/bin/make -f
+# -*- makefile -*-
+# Makefile to build the nml debian package.
 
+# Enable all hardening options (since nml processes potentially
+# untrusted input).
+export DEB_BUILD_MAINT_OPTIONS=hardening=+all
+
+# Use debhelper default for all targets (but some are overridden below).
 %:
-	dh $@
+	# Force the pybuild buildsystem, since there is also a
+	# Makefile (which is used only for testing by this rules file).
+	dh $@ --buildsystem pybuild
+
+ifneq (,$(filter terse,$(DEB_BUILD_OPTIONS)))
+# When terse is specified, pass --quiet to dh_auto_*, which gets passed
+# on to pybuild. We cannot pass this directly to dh above, since:
+#  - Options passed to dh get wrapped on -O and are not passed on to the
+#    actual buildsystem.
+#  - If you work around that using DH_OPTIONS, you will be passing
+#    --quiet also to steps that do not understand it (e.g. clean).
+#
+# This stuff can be removed once dh-python starts handling this
+# automatically: https://bugs.debian.org/945945
+# Merged in dh-python 5.20220213, 2022-02, so can probably be removed
+# once bookworm is released.
+override_dh_auto_build:
+	dh_auto_build $@ -- --quiet
+override_dh_auto_configure:
+	dh_auto_configure $@ -- --quiet
+override_dh_auto_install:
+	dh_auto_install $@ -- --quiet
+endif
+
+ifeq (,$(filter terse,$(DEB_BUILD_OPTIONS)))
+# Enable verbose by *unsetting* _V, which defaults to a prefix that
+# supresses verbose output
+TEST_VERBOSE="_V="
+endif
+
+override_dh_auto_test:
+	# Override regression testing to:
+	#  - Prevent python from generating pyc files all over the
+	#    source tree.
+	#  - Control test verbosity
+	#  - Use `make regression` instead of `make test`, since the
+	#    latter includes style checks that might cause unneccesary
+	#    test failures when the style check tools are updated.
+	PYTHONDONTWRITEBYTECODE=1 make regression $(TEST_VERBOSE)
+
+execute_after_dh_auto_clean:
+	# The distutils buildsystem doesn't know about the regression
+	# test, so we'll have to manually clean it.
+	make -C regression clean

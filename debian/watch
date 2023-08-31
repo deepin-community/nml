@@ -1,0 +1,6 @@
+version=4
+# API returns JSON, so use plain to disable HTML parsing (just grep the
+# JSON for urls, which is not perfect but works well enough).
+opts="searchmode=plain" \
+https://api.github.com/repos/OpenTTD/@PACKAGE@/releases \
+https://github.com/OpenTTD/@PACKAGE@/releases/download/[^/]*/@PACKAGE@-([\.\d]+)@ARCHIVE_EXT@

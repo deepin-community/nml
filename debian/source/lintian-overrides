@@ -1,0 +1,2 @@
+# NFO files are datafiles, not source files
+very-long-line-length-in-source-file regression/expected/*.nfo *

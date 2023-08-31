@@ -1,0 +1,14 @@
+# These are just source files for examples that are used in multiple examples.
+# To keep the examples self-contained, these files must be duplicated (upstream
+# also supports Windows, so using symlinks upstream will not work).
+# Since these are only a small part of the total example files, just
+# ignore the duplicates.
+nml: duplicate-files usr/share/doc/nml/examples/railtype/gfx/tunnel_track.png usr/share/doc/nml/examples/roadtype_and_tramtype/gfx/tunnel_track.png
+nml: duplicate-files usr/share/doc/nml/examples/railtype/gfx/gui_rail.png usr/share/doc/nml/examples/roadtype_and_tramtype/gfx/gui_rail.png
+nml: duplicate-files usr/share/doc/nml/examples/railtype/gfx/gui_erail.png usr/share/doc/nml/examples/roadtype_and_tramtype/gfx/gui_erail.png
+nml: duplicate-files usr/share/doc/nml/examples/railtype/gfx/depot_normal.png usr/share/doc/nml/examples/roadtype_and_tramtype/gfx/depot_normal.png
+nml: duplicate-files usr/share/doc/nml/examples/railtype/gfx/depot_electric.png usr/share/doc/nml/examples/roadtype_and_tramtype/gfx/depot_electric.png
+nml: duplicate-files usr/share/doc/nml/examples/railtype/gfx/rails_overlays.png usr/share/doc/nml/examples/roadtype_and_tramtype/gfx/rails_overlays.png
+nml: duplicate-files usr/share/doc/nml/examples/railtype/gfx/lc_left.png usr/share/doc/nml/examples/roadtype_and_tramtype/gfx/lc_left.png
+nml: duplicate-files usr/share/doc/nml/examples/railtype/gfx/lc_right.png usr/share/doc/nml/examples/roadtype_and_tramtype/gfx/lc_right.png
+nml: duplicate-files usr/share/doc/nml/examples/railtype/gfx/fences.png usr/share/doc/nml/examples/roadtype_and_tramtype/gfx/fences.png

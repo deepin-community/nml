@@ -1,5 +1,153 @@
-template-repository (1.0-1) unstable; urgency=medium
+nml (0.7.1-1) unstable; urgency=medium
 
-  * Initial release
+  * [6b483b1] New upstream release 0.7.1
+  * [86ef696] Fix watchfile by using github API
+  * [23090c9] Bump standards version to 4.6.2 (no changes required)
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Mon, 13 Feb 2023 13:21:16 +0100
+
+nml (0.7.0-1) unstable; urgency=medium
+
+  * [13d243b] New upstream release 0.7.0
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Tue, 06 Sep 2022 21:42:32 +0200
+
+nml (0.6.1-1) unstable; urgency=medium
+
+  * [7cde190] New upstream release 0.6.1
+  * [9055f63] Add upstream metadata
+  * [2f8263f] Bump standards version to 4.6.0 (no changes required)
+  * [6272016] Revert "Fix test FTBFS: backport fixed .pcx files from
+    upstream"
+  * [38be21d] Skip style checks during dh_auto_test
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Tue, 23 Nov 2021 11:18:07 +0100
+
+nml (0.5.3-2) unstable; urgency=medium
+
+  * [45f287d] Fix test FTBFS: backport fixed .pcx files from upstream.
+    Thanks to Phil Morrell for the initial patch (Closes: #980641)
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Wed, 24 Feb 2021 14:43:29 +0100
+
+nml (0.5.3-1) unstable; urgency=medium
+
+  * [ed7a795] New upstream release 0.5.3
+  * [8db9759] Bump standards version to 4.5.1.0 (no changes required)
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Mon, 07 Dec 2020 12:44:05 +0100
+
+nml (0.5.2-1) unstable; urgency=medium
+
+  * [3784cfa] New upstream release 0.5.2
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Tue, 19 May 2020 18:00:48 +0200
+
+nml (0.5.1-3) unstable; urgency=medium
+
+  * [3ae14f8] Fix nocheck FTBFS: Remove <!nocheck> annotations. Thanks to
+    Helmut Grohne for the patch (Closes: #960461)
+  * [457dda4] Bump debhelper version to v13
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Wed, 13 May 2020 09:45:20 +0200
+
+nml (0.5.1-2) unstable; urgency=medium
+
+  * [2916256] Fix build with DEB_BUILD_OPTIONS=nocheck
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Mon, 11 May 2020 20:32:06 +0200
+
+nml (0.5.1-1) unstable; urgency=medium
+
+  * [1b0d3b3] New upstream release 0.5.1 (Closes: #954672)
+  * [e6b5723] Declare minimum version for python3-pil
+  * [22ef63a] Bump standards version to 4.5.0 (no changes required)
+  * [9659ab2] Remove fix-build-with-newer-pillow.patch, included upstream
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Mon, 11 May 2020 10:52:07 +0200
+
+nml (0.4.5-2) unstable; urgency=medium
+
+  * [9ff16e4] Fix building with newer pillow versions (Closes: #942716)
+  * [5a2c057] Make regression tests more verbose
+  * [7d879f9] Support DEB_BUILD_OPTIONS=terse
+  * [dd97731] Bump debhelper version to v12
+  * [4b86be6] Bump standards version to 4.4.1
+  * [935d839] Set Rules-Requires-Root: no for building
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Mon, 02 Dec 2019 13:22:12 +0100
+
+nml (0.4.5-1) unstable; urgency=medium
+
+  * [268c252] New upstream release 0.4.5
+  * [1d66141] Mark testing Build-Depends with !nocheck. Thanks to Helmut
+    Grohne for the patch
+  * [7c03add] Fix build dependencies for Multi-Arch cross-compilation.
+    Thanks to Helmut Grohne for the patch (Closes: #902189)
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Fri, 20 Jul 2018 14:02:03 +0200
+
+nml (0.4.4-2) unstable; urgency=medium
+
+  * [a948ee9] Bump debhelper version to v11
+  * [21324b3] Bump standards version to 4.1.4
+  * [55fb134] Respect nocheck in DEB_BUILD_OPTIONS
+  * [2f8372b] Remove X-Python3-Version: >= 3.2. This requirement is
+    automatically satisfied, even in oldstable, so there is no need to
+    keep it around.
+  * [65eb9c2] Mark as Multi-arch: foreign
+  * [c0567b7] Enable all hardening options
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Thu, 10 May 2018 21:43:27 +0200
+
+nml (0.4.4-1) unstable; urgency=medium
+
+  * [c2871ea] New upstream release 0.4.4.
+    - Fixes FTBFS with python3-pil 3.0. (Closes: #808508)
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Thu, 07 Jan 2016 14:07:47 +0100
+
+nml (0.4.2-1) unstable; urgency=medium
+
+  * [7115986] New upstream release 0.4.2.
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Tue, 22 Sep 2015 20:11:39 +0200
+
+nml (0.4.1-1) unstable; urgency=medium
+
+  * [fea8e5b] Update watch file
+  * [d4cfd02] New upstream release 0.4.1.
+  * [1df5ef8] Build for (only) python3 now
+  * [b423138] Turn into architecture-dependent package
+  * [560eb77] Update copyright file, bootstrap.py was removed
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Sat, 02 May 2015 08:46:54 +0200
+
+nml (0.3.1-2) unstable; urgency=medium
+
+  * [7ec683d] Bump Standards-Version to 3.9.6, no changes required.
+  * [461c8f7] Update watch file
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Thu, 23 Oct 2014 16:18:57 +0200
+
+nml (0.3.1-1) unstable; urgency=medium
+
+  * [c6616c7] New upstream release 0.3.1.
+  * [28f5b9a] Update the watch file
+  * [72a1ae5] Bump Standards-Version to 3.9.5, no changes required.
+  * [8aaaa37] Use canonical Vcs urls (on anonscm.debian.org)
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Sun, 11 May 2014 10:33:02 +0200
+
+nml (0.2.4-1) unstable; urgency=low
+
+  * [f45e993] New upstream release 0.2.4.
+  * [c2c307f] Bump Standards-Version to 3.9.4, no changes required.
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Fri, 15 Mar 2013 16:35:36 +0100
+
+nml (0.2.3-1) unstable; urgency=low
+
+  * Initial release. (Closes: #651217)
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Mon, 26 Mar 2012 15:38:40 +0200
